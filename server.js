@@ -5,10 +5,17 @@ const server = http.createServer(app);
 const logger = require('morgan');
 const cors = require('cors');
 
+const mercadopago = require('mercadopago');
+
+// MERCADOPAGO
+
+mercadopago.configure({
+    'access_token': 'TEST-7493313499794129-042320-e674a517e066b83432af570eea368dd0-427354191'
+});
+// 
+
 // RUTAS
-
     const users = require('./routes/userRoutes');
-
 // 
 
 const port = process.env.PORT || 3000;
