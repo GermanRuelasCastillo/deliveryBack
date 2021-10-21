@@ -51,18 +51,19 @@ module.exports = {
                     expiresIn: (60*60*24) //1hora
                 });
                 const data = {
-                    id:myuser.id,
-                    name:myuser.name,
-                    lastname:myuser.lastname,
-                    email:myuser.email,
-                    phone:myuser.phone,
-                    image:myuser.image,
-                    session_token: `JWT ${token}`
+                    id : myuser.id,
+                    name : myuser.name,
+                    lastname : myuser.lastname,
+                    email : myuser.email,
+                    phone : myuser.phone,
+                    image : myuser.image,
+                    session_token :  `JWT ${token}`
                 };
                 return res.status(201).json({
                     success:true,
-                    data: data,
-                    error: ''
+                    data: JSON.stringify(data),
+                    error: '',
+                    message: 'Login correcto'
                 });
             }else{
                 return res.status(401).json({
