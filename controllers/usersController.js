@@ -5,7 +5,7 @@ const keys = require('../config/keys');
 module.exports = {
     async getAll(req, res, next) {
         try {
-            const data = await User .getAll();
+            const data = await User.getAll();
             return res.status(201).json(data);
         } catch (error) {
             console.log(error);
